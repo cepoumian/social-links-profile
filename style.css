@@ -153,7 +153,6 @@
 @layer layout {
   .cover {
     display: flex;
-    flex-direction: column;
     min-block-size: 100vh;
     justify-content: center;
     align-items: center;
@@ -184,11 +183,12 @@
 @layer components {
   .card {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-300);
-    width: 24rem;
+    max-width: 24rem;
     border-radius: var(--border-radius-1);
     background-color: var(--background-medium);
   }

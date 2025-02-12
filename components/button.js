@@ -6,7 +6,7 @@ template.innerHTML = /* html */ `
       display: inline-block;
       width: 100%;
       text-align: center;
-      padding: var(--spacing-150, 0.75rem) 0;
+      padding-block: var(--spacing-150, 0.75rem);
       border-radius: var(--spacing-100, 0.5rem);
       text-decoration: none;
       font-weight: var(--fw-bold);

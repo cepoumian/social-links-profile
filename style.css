@@ -165,10 +165,6 @@
     padding: var(--box-padding);
   }
 
-  .wrapper {
-    padding-inline: var(--spacing-200);
-  }
-
   .stack {
     --stack-space: var(--spacing-300);
     display: flex;

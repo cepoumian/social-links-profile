@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+  font-display: swap;
+}
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer base {
+  /* Primitives */
+  :root {
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-green: hsl(75, 94%, 57%);
+    --clr-gray-700: hsl(0, 0%, 20%);
+    --clr-gray-800: hsl(0, 0%, 12%);
+    --clr-gray-900: hsl(0, 0%, 8%);
+
+    --ff: "Inter", sans-serif;
+
+    --fs-400: 0.875rem;
+    --fs-500: 1rem;
+    --fs-600: 1.5rem;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    --spacing-50: 0.25rem;
+    --spacing-100: 0.5rem;
+    --spacing-150: 0.75rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-500: 2.5rem;
+
+    --border-radius-1: 0.75rem;
+
+    --line-height-s: 1.2;
+    --line-height-m: 1.5;
+    --letter-spacing-w: 0.013em;
+    --letter-spacing-n: 0;
+
+    /* Semantic Layer */
+    /* in another selector for syntax highlighting reasons only */
+  }
+  :root {
+    --clr-accent: var(--clr-green);
+
+    --measure: 60ch;
+
+    --text-main: var(--clr-white);
+    --text-high-contrast: var(--clr-green);
+
+    --background-dark: var(--clr-gray-900);
+    --background-medium: var(--clr-gray-800);
+    --background-light: var(--clr-gray-700);
+  }
+}
+
+@layer base {
+  html {
+    font-family: var(--ff);
+    line-height: var(--line-height-m);
+  }
+
+  body {
+    font-size: var(--fs-400);
+    color: var(--text-main);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    max-inline-size: var(--measure);
+    color: var(--text-high-main);
+  }
+
+  p {
+    max-inline-size: var(--measure);
+  }
+}
+
+@layer layout {
+  .cover {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .box {
+    --box-padding: var(--spacing-500);
+    padding: var(--box-padding);
+  }
+
+  .wrapper {
+    padding-inline: var(--spacing-200);
+  }
+
+  .stack {
+    --stack-space: var(--spacing-300);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .stack > * {
+    margin-block: 0;
+  }
+
+  .stack > * + * {
+    margin-block-start: var(--stack-space);
+  }
+}
+
+@layer components {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-300);
+    width: 24rem;
+    border-radius: var(--border-radius-1);
+    background-color: var(--background-medium);
+  }
+
+  .avatar {
+    max-width: 5.5rem;
+    border-radius: 50%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-150);
+    text-align: center;
+  }
+
+  .name {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-medium);
+  }
+
+  .location {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--text-high-contrast);
+  }
+
+  .quote {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-light);
+  }
+
+  .links {
+    --stack-space: var(--spacing-200);
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+@layer utilities {
+  .bg\:dark {
+    background-color: var(--background-dark);
+  }
+
+  .bg\:medium {
+    background-color: var(--background-medium);
+  }
+
+  .bg\:light {
+    background-color: var(--background-light);
+  }
+}

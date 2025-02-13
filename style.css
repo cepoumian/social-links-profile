@@ -212,7 +212,7 @@
 
   .location {
     font-size: var(--fs-400);
-    font-weight: var(--fw-regular);
+    font-weight: var(--fw-bold);
     color: var(--text-high-contrast);
   }
 

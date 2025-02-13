@@ -24,7 +24,7 @@ This is a solution to the [Social links profile challenge on Frontend Mentor](ht
 ### Links
 
 - Solution Github Repo URL: [Solution repo](https://github.com/cepoumian/social-links-profile)
-- Live Site URL: [Solution live](https://cepo-blog-preview-card.netlify.app/)
+- Live Site URL: [Solution live](https://cepo-social-links-profile.netlify.app/)
 
 ## My process
 
